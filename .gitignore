@@ -353,4 +353,4 @@ MigrationBackup/
 .ionide/
 
 # Visual Studio Code workspace
-.code-workspace
+*.code-workspace
