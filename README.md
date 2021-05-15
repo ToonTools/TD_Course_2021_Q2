@@ -19,6 +19,7 @@ Toon Boom Technical Director Course May-June 2021. <br><br>
 | 10 | 6/6/2021 |  Function Wizard <br> Beer Mug Master Controller <br> Shark Master Controller|
 | 11 | 12/6/2021 | Scripted Master Controller |
 | 12 | 13/6/2021 | Scripted Drawing Tool|
+| - | --- | Harmony FX plugins [[open FX](https://docs.toonboom.com/help/harmony-20/premium/effects/about-openfx.html)] [[Boris FX](https://borisfx.com/)]
 
  - - - -
  
