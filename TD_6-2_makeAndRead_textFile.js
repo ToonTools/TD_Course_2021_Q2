@@ -11,9 +11,21 @@ function makeTextFile(){
 	var myFile = new File(fileCompletePath)
 	if( myFile.exists){
 		MessageLog.trace("myFile exists")
-		myFile.open(FileAccess.Append)
-		myFile.writeLine("Additional information added to the file")
-		myFile.close()
+		
+		var message = "The file exists, do you want to add to it? "
+		var ans 	= MessageBox.warning(message, MessageBox.Yes , MessageBox.No )
+		
+		if(ans == MessageBox.Yes){
+			//add new line
+			myFile.open(FileAccess.Append)
+			myFile.writeLine("Additional information added to the file")
+			myFile.close()
+			MessageLog.trace("line added to text file")
+		}
+		else{
+			//do nothing
+			MessageLog.trace("nothing added to the text file")
+		}
 	}
 	else{
 		MessageLog.trace("MyFile does not exists")
