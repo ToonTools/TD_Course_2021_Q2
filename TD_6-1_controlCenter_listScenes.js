@@ -2,10 +2,24 @@
 
 ControlCentre.printToConsole("\n---started---\n")
 
-var list = ControlCentre.environments();
-for (var i = 0 ; i< list.length ; i++){
-    var selectedEnvironment = list[i]
-    ControlCentre.printToConsole("selectedEnvironment = " + selectedEnvironment )
+var envList = ControlCentre.environments();
+// go through all environments
+for (var i = 0 ; i< envList.length ; i++){
+    var selEnv = envList[i]
+    var selEnv_name = selEnv.name
+    ControlCentre.printToConsole("environment [" + i +"] " + selEnv_name )
+
+    // go through all jobs in this environment
+
+    var selEnv_jobList = ControlCentre.jobs(selEnv)
+    for( var j = 0 ; j < selEnv_jobList.length ; j++ ){
+        
+        var selJob = selEnv_jobList[j]
+        var selJob_name = selJob.name
+        ControlCentre.printToConsole("\tjob [" + j +"] " + selJob_name )
+
+    }
+
 }
 //Retrieve the entire message log and print it out.  
 //var log = ControlCentre.messageLog(); 
