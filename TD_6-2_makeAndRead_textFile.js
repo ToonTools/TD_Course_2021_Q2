@@ -11,14 +11,15 @@ function makeTextFile(){
 	var myFile = new File(fileCompletePath)
 	if( myFile.exists){
 		MessageLog.trace("myFile exists")
+		myFile.open(FileAccess.Append)
+		myFile.writeLine("Additional information added to the file")
+		myFile.close()
 	}
 	else{
 		MessageLog.trace("MyFile does not exists")
-		
-		myFile.open(FileAccess.WriteOnly)
-		myFile.writeLine("my initial message")
+		myFile.open(FileAccess.Append)
+		myFile.writeLine("Text file now created")
 		myFile.close()
-
 	}
 	
 	MessageLog.trace("the file should be at = " + fileCompletePath)
