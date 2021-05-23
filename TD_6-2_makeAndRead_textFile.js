@@ -44,6 +44,9 @@ function readTextFile(){
 	if( fileToRead.exists){
 	// then we want to read the file
 		MessageLog.trace("will now read the text file")
+		fileToRead.open(FileAccess.ReadOnly)
+		var content = fileToRead.read()
+		MessageLog.trace("\n\n"+content+"\n\n")
 	}
 	else{
 		MessageBox.information("File does not exist")
