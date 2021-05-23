@@ -35,6 +35,19 @@ function makeTextFile(){
 	}
 	
 	MessageLog.trace("the file should be at = " + fileCompletePath)
+}
+
+
+function readTextFile(){
+
+	var fileToRead = new File(fileCompletePath)
+	if( fileToRead.exists){
+	// then we want to read the file
+		MessageLog.trace("will now read the text file")
+	}
+	else{
+		MessageBox.information("File does not exist")
+	}
 	
 }
 
