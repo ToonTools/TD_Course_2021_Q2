@@ -1,4 +1,5 @@
 //run this from command prompt pointed at a harmony server
+// control center documentation: https://docs.toonboom.com/help/harmony-20/scripting/dbscript/annotated.html
 
 var envInput = "TCH_TheCatch"
 
