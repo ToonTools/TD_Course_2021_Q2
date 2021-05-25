@@ -33,8 +33,8 @@ for (var i = 0 ; i< envList.length ; i++){
     
                 var selScene = selJob_sceneList[k]
                 var selScene_name = selScene.name
-                ControlCentre.printToConsole("\t\tscene [" + k + "] " +selScene_name )
-    
+                var selScene_path = selScene.path
+                ControlCentre.printToConsole("\t\tscene [" + k + "] " +selScene_name + "\t" + selScene_path )
             }
         }
     }

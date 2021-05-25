@@ -34,7 +34,7 @@ Toon Boom Technical Director Course May-June 2021. <br><br>
 * [Harmony v20 API documentation](https://docs.toonboom.com/help/harmony-20/scripting/script/index.html)
 * [Eloquent Javascript](https://eloquentjavascript.net/)
 * [SoloLearn Javascript](https://www.sololearn.com/learning/1024)
-
+* [Khan Academy Javascript](https://www.khanacademy.org/computing/computer-programming/programming)
  - - - -
  
 ## Other Harmony Scripters
