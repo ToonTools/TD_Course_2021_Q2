@@ -17,16 +17,25 @@ function addComposite(){
 	var selNode = selection.selectedNode(0)
 	MessageLog.trace("selNode = " + selNode)
 
-	// create a composite
-	var myCompName = "temp name"
-	var compNode = node.add("Top", myCompName , "COMPOSITE", 0, 0, 0)
+	var selNode_x 	= node.coordX( selNode)
+	var selNode_y 	= node.coordY( selNode)
 
-	MessageLog.trace("compNode = " + compNode )
+	var offset 		= 200 
+
+	var comp_x 		= selNode_x 
+	var comp_y 		= selNode_y + offset
+
+	// create a composite
+	// move composite to good location
+
+	var selNodeName = node.getName(selNode)
+	var myCompName = selNodeName + "_COMPOSITE"
+	var compNode = node.add("Top", myCompName , "COMPOSITE", comp_x, comp_y, 0)
+
+	MessageLog.trace("compNode Created = " + compNode )
 
 	// link composite to drawing node
 	node.link(selNode,0, compNode,0,true, true)
-
-	// move composite to good location
 
 	MessageLog.trace("\n --- addComposite() completed successfully --- \n")
 }
