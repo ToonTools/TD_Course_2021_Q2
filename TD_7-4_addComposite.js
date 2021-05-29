@@ -17,15 +17,14 @@ function addComposite(){
 	var selNode = selection.selectedNode(0)
 	MessageLog.trace("selNode = " + selNode)
 
-
 	// create a composite
 	var myCompName = "temp name"
-	node.add("Top", myCompName , "COMPOSITE", 0, 0, 0)
+	var compNode = node.add("Top", myCompName , "COMPOSITE", 0, 0, 0)
 
-	// name composite
-
+	MessageLog.trace("compNode = " + compNode )
 
 	// link composite to drawing node
+	node.link(selNode,0, compNode,0,true, true)
 
 	// move composite to good location
 
