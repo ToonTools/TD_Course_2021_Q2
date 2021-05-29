@@ -16,6 +16,8 @@ function makeTextFile(){
 		if(ans == MessageBox.Yes){
 			//add new line
 
+			// based on the Dialog demo in Harmony documentaiton : https://docs.toonboom.com/help/harmony-20/scripting/script/classDialog.html
+
 			var d1 = new Dialog()
 			d1.title = "What would you like to add?"
 
