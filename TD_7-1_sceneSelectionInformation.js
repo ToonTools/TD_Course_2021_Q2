@@ -7,8 +7,10 @@
 
 function getSceneSelectionInformation(){
 	
-	var sceneName = scene.currentScene()
+	var sceneName 	= scene.currentScene()
+	var projectPath = scene.currentProjectPath()
 		
-	MessageLog.trace("sceneName : " + sceneName) 
+	MessageLog.trace("sceneName : " 	+ sceneName) 
+	MessageLog.trace("projectPath : " 	+ projectPath) 
 }
 
