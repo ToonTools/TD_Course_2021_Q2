@@ -15,8 +15,21 @@ function makeTextFile(){
 		
 		if(ans == MessageBox.Yes){
 			//add new line
+
+			var d1 = new Dialog()
+			d1.title = "What would you like to add?"
+
+			var userInputLineEdit = new LineEdit
+			userInputLineEdit.label = "Enter new line:"
+
+			d1.add(userInputLineEdit)
+
+			if ( d1.exec()){
+				var userInput = userInputLineEdit.text
+			}
+
 			myFile.open(FileAccess.Append)
-			myFile.writeLine("Additional information added to the file")
+			myFile.writeLine(userInput)
 			myFile.close()
 			MessageLog.trace("line added to text file")
 		}else{
@@ -44,8 +57,8 @@ function readTextFile(){
 		// make dialog box with readfilecontent as a message
 		//https://docs.toonboom.com/help/harmony-20/scripting/script/classDialog.html
 		
-		var d = new Dialog()
-		d.title = fileName
+		var d2 = new Dialog()
+		d2.title = fileName
 		
 		var fileContent = new Label
 		fileContent.text = content
@@ -53,13 +66,8 @@ function readTextFile(){
 		//var fileContent = new LineEdit
 		//fileContent.text = content
 		
-		d.add(fileContent)
-		
-		d.exec()
-		
-		
-		
-		
+		d2.add(fileContent)
+		d2.exec()
 		
 		
 		//MessageLog.trace("\n\n"+content+"\n\n")
