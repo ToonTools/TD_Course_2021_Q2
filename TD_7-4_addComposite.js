@@ -1,6 +1,6 @@
 function addComposite(){
 
-	MessageLog.trace("add composite function called")
+	MessageLog.trace("\n\n --- addComposite() called --- ")
 
 
 	if( selection.numberOfNodesSelected()<= 0){
@@ -28,5 +28,5 @@ function addComposite(){
 
 	// move composite to good location
 
-
+	MessageLog.trace("\n --- addComposite() completed successfully --- \n")
 }
