@@ -15,7 +15,9 @@ function getSceneSelectionInformation(){
 	
 	var selTotal = selection.numberOfNodesSelected()
 	if( selTotal <= 0 ){
-		MessageLog.trace("Nothing is selected") 
+		MessageLog.trace("Nothing is selected, so I will list everything") 
+		
+		selection.selectAll()	
 	}
 	
 	/*  slightly briefer way to write the same if statement
@@ -24,9 +26,15 @@ function getSceneSelectionInformation(){
 	}
 	*/
 	
+	/*
 	for( var n = 0; n < selTotal; n++ ){
 		var selNode = selection.selectedNode(n)
 		MessageLog.trace("Node "+ n + " : " + selNode)
+	}
+	*/
+	
+	for( n in selection.selectedNodes() ){
+		MessageLog.trace("Node " + n + " : " + selection.selectedNode(n) )
 	}
 
 }
