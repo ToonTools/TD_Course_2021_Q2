@@ -37,9 +37,20 @@ function addAndUseDisplays(){
 	MessageLog.trace("min_y = " + min_y)
 
 
-	// create name for composite
+	var nodeParent = "Top/"
 
+	// create name for composite
+	var compName = "tempName"
 	// create new composite
+
+
+	var offset_y = 100
+
+	var comp_x = average_x
+	var comp_y = min_y + offset_y
+	var comp_z = 0
+
+	var newCompositeNode = node.add(nodeParent, compName, "COMPOSITE", comp_x, comp_y, comp_z)
 
 	// connect source nodes to destination composite
 
