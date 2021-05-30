@@ -11,7 +11,23 @@ function addAndUseDisplays(){
 	}
 	// validate that current selection can have composite attached
 	// this is where we add the exclude types
+	var exclude_types = ["PEG","SubNodeAnimationFilter","CurveModule","AutoFoldModule","AutoMuscleModule","ArticulationModule","BendyBoneModule","DISPLAY"]
+	
 	// warn user if composite can not be attached
+	for( i in userSelection){
+		var sel_src_node 		= userSelection[i]
+		var sel_src_node_type 	= node.type(sel_src_node) 
+
+		
+
+
+	}
+
+
+
+
+
+
 
 	// we now know our current selection is valid, we can grab some information from the first node
 
