@@ -12,6 +12,14 @@ function addAndUseDisplays(){
 	// this is where we add the exclude types
 	// warn user if composite can not be attached
 
+	// we now know our current selection is valid, we can grab some information from the first node
+
+	var firstNodeInSelection 	= userSelection[0]
+	var firstNodeName 			= node.getName(firstNodeInSelection)
+	var firstNodeParent			= node.parentNode(firstNodeInSelection)
+
+
+
 	// calculate average x pos of selection
 	// calulcate min y pos of selection
 	var total_x = 0
@@ -27,18 +35,11 @@ function addAndUseDisplays(){
 		if( sel_y > min_y ){
 			min_y = sel_y
 		}
-
-		MessageLog.trace(userSelection[n] + ": x=" + sel_x + "     y=" + sel_y)
 	}
 
 	var average_x = total_x/userSelection.length
 
-	MessageLog.trace("average_x = " + average_x)
-	MessageLog.trace("min_y = " + min_y)
-
-
-	var nodeParent = "Top/"
-
+	var nodeParent = firstNodeParent + "/"
 	// create name for composite
 	var compName = "tempName"
 	// create new composite
