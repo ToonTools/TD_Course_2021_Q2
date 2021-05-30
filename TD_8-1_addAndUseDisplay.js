@@ -1,8 +1,9 @@
 function addAndUseDisplays(){
 
+	scene.beginUndoRedoAccum("addAndUseDisplays()")
 	MessageLog.trace("\t -- started: addAndUseDisplays()")
 
-	// get current selection
+	// get current selection, reject if nothing is selected
 	var userSelection = selection.selectedNodes()
 	if(userSelection.length <= 0){
 		MessageLog.trace("nothing selected, will end process")
@@ -17,7 +18,6 @@ function addAndUseDisplays(){
 	var firstNodeInSelection 	= userSelection[0]
 	var firstNodeName 			= node.getName(firstNodeInSelection)
 	var firstNodeParent			= node.parentNode(firstNodeInSelection)
-
 
 
 	// calculate average x pos of selection
@@ -77,7 +77,10 @@ function addAndUseDisplays(){
 	// connect display to composite
 	node.link(newCompositeNode, 0, newDisplayNode, 0)
 	// set display as curent display
+	node.setAsGlobalDisplay(newDisplayNode)
 
 
 	MessageLog.trace("\t -- completed: addAndUseDisplays()")
+
+	scene.endUndoRedoAccum()
 }
