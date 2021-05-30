@@ -11,23 +11,22 @@ function addAndUseDisplays(){
 	}
 	// validate that current selection can have composite attached
 	// this is where we add the exclude types
-	var exclude_types = ["PEG","SubNodeAnimationFilter","CurveModule","AutoFoldModule","AutoMuscleModule","ArticulationModule","BendyBoneModule","DISPLAY"]
-	
+	var exclude_types = ["WRITE","PEG","SubNodeAnimationFilter","CurveModule","AutoFoldModule","AutoMuscleModule","ArticulationModule","BendyBoneModule","DISPLAY"]
+
 	// warn user if composite can not be attached
 	for( i in userSelection){
 		var sel_src_node 		= userSelection[i]
 		var sel_src_node_type 	= node.type(sel_src_node) 
 
-		
+		for ( j in exclude_types){
+			var sel_exclude_type = exclude_types[j]
 
-
+			if (sel_src_node_type == sel_exclude_type ){
+				MessageBox.information ( "selection may not contain any [" + sel_exclude_type + "] types (" + sel_src_node +")"  )
+				return 
+			}
+		}
 	}
-
-
-
-
-
-
 
 	// we now know our current selection is valid, we can grab some information from the first node
 
