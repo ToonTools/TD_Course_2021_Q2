@@ -64,17 +64,18 @@ function addAndUseDisplays(){
 		node.link(sortedSelection[k], 0 , newCompositeNode , 0, false, true)
 	}
 
-
-
-
 	// get name for diplay node
-
+	var displayName = "tempDiplayName"
 	// create a diplay node
-
 	// put diplay node under composite
+	var display_x = comp_x
+	var display_y = comp_y + offset_y
+	var display_z = 0
+
+	var newDisplayNode = node.add(nodeParent, displayName, "DISPLAY", display_x, display_y,display_z )
 
 	// connect display to composite
-
+	node.link(newCompositeNode, 0, newDisplayNode, 0)
 	// set display as curent display
 
 
