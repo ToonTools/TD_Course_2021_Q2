@@ -41,9 +41,8 @@ function addAndUseDisplays(){
 
 	var nodeParent = firstNodeParent + "/"
 	// create name for composite
-	var compName = "tempName"
+	var compName = firstNodeName + "_COMPOSITE"
 	// create new composite
-
 
 	var offset_y = 100
 
@@ -65,20 +64,43 @@ function addAndUseDisplays(){
 	}
 
 	// get name for diplay node
-	var displayName = "tempDiplayName"
+	var newDisplayName = firstNodeName + "_DISPLAY"
+	var newDisplayPath = firstNodeParent + "/" + newDisplayName
+
+	// Top/myDisplay
+
+	// check that the name is unique, if not make the name unique
+	function checkNameIsUnique(nodePath){
+		if (node.getName(nodePath) != "" ){
+			return false
+			//MessageBox.information(nodePath + "\n\nthis name already exists, you need to use somethign else")
+		}
+		return true
+	}
+
+	/*
+	 TODO this is currently making a unique display name correctly, if we wanted to improve it we could:
+	 	take the last value of the string
+		 if it is an integer, add one to it
+		 convert it back to a strin again and assing it to the name
+	 */
+	while( !checkNameIsUnique(newDisplayPath)){
+		newDisplayName += "_1"
+		newDisplayPath += "_1"
+	}
+
 	// create a diplay node
 	// put diplay node under composite
 	var display_x = comp_x
 	var display_y = comp_y + offset_y
 	var display_z = 0
 
-	var newDisplayNode = node.add(nodeParent, displayName, "DISPLAY", display_x, display_y,display_z )
+	var newDisplayNode = node.add(nodeParent, newDisplayName, "DISPLAY", display_x, display_y,display_z )
 
 	// connect display to composite
 	node.link(newCompositeNode, 0, newDisplayNode, 0)
 	// set display as curent display
 	node.setAsGlobalDisplay(newDisplayNode)
-
 
 	MessageLog.trace("\t -- completed: addAndUseDisplays()")
 
