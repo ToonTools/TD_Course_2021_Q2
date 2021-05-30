@@ -53,7 +53,19 @@ function addAndUseDisplays(){
 
 	var newCompositeNode = node.add(nodeParent, compName, "COMPOSITE", comp_x, comp_y, comp_z)
 
+
+	//sort the origina user selection
+	var sortedSelection = userSelection.sort(function(a, b) {
+		return parseFloat(node.coordX(a)) - parseFloat(node.coordX(b));
+	});
+
 	// connect source nodes to destination composite
+	for( k in sortedSelection ){
+		node.link(sortedSelection[k], 0 , newCompositeNode , 0, false, true)
+	}
+
+
+
 
 	// get name for diplay node
 
