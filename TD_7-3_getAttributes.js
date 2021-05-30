@@ -1,8 +1,8 @@
 function getAttributes(){
 
 	var selNode 			= selection.selectedNode(0)
-	var attrNames 		= node.getAllAttrNames(selNode)
-	var attrKeyword	= node.getAllAttrKeywords(selNode)
+	var attrNames 			= node.getAllAttrNames(selNode)
+	var attrKeyword			= node.getAllAttrKeywords(selNode)
 	var frame				= 1
 
 	MessageLog.trace(attrNames.length + " attributes found for : " + selNode )
