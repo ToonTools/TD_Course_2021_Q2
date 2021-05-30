@@ -60,3 +60,17 @@ Controlcenter -runStageScript <qsa_script_name> -env <environment name> -job <jo
 ```javascript
 Controlcenter -runStageScript "C:\Github\ToonTools\TD_Course_2021_Q2\TD_7-2_listWriteNodesInScene.js" -env TCH_TheCatch -job TCH_101_Pilot
 ```
+---
+## Day 8
+modify shortcuts file here
+```
+C:\Program Files (x86)\Toon Boom Animation\Toon Boom Harmony 20 Premium\resources\shortcuts.xml
+```
+Make a backup before you edit it as it is difficult to fix without reinstalling harmony.
+
+``` javascript
+// TD_custom
+<category id="TD_custom" text ="TD_custom">
+  <shortcut checkable="false" id="getAttributes" longDesc="list the attributes and their value for the selected node" order="256" slot="onActionExecuteScript(QString)" responder="scriptResponder" itemParameter="getAttributes in TD_7-3_getAttributes.js" text="get attributes" value="`" >
+</category>
+```
