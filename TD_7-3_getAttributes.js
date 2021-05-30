@@ -1,5 +1,4 @@
 function getAttributes(){
-
 	var selNode 			= selection.selectedNode(0)
 	var attrNames 			= node.getAllAttrNames(selNode)
 	var attrKeyword			= node.getAllAttrKeywords(selNode)
