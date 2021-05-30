@@ -11,7 +11,10 @@ function getAttributes(){
 
 		var attrVal = node.getTextAttr(selNode,frame,attrKeyword[n])
 
-		MessageLog.trace("\t" + n + " : " + attrNames[n] + " : " + attrKeyword[n] + " : " + attrVal)
+		//MessageLog.trace("\t" + n + " : " + attrNames[n] + " : " + attrKeyword[n] + " : " + attrVal)
+		MessageLog.trace('\t[ ' + attrVal + ' ]\t ' + attrNames[n] + ' (' + attrKeyword[n] + ') ')
+
+
 	}
 
 }
