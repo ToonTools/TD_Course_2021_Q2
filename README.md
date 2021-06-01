@@ -30,8 +30,17 @@ Toon Boom Technical Director Course May-June 2021. <br><br>
 
  - - - -
  
+## Toon Boom Documentation
+* [Harmony v20](https://docs.toonboom.com/help/harmony-20/premium/book/index.html)
+* [Harmony v20 Scripting](https://docs.toonboom.com/help/harmony-20/scripting/script/index.html) [[introduction](file:///C:/Program%20Files%20(x86)/Toon%20Boom%20Animation/Toon%20Boom%20Harmony%2020%20Premium/help/script/index.html)]
+* [Harmony v20 Scripting Extended](https://docs.toonboom.com/help/harmony-20/scripting/extended/) [[create a tool](https://docs.toonboom.com/help/harmony-20/scripting/extended/tutorial-tool-creation.html)]
+* [Harmony v20 Control Center Scripting](https://docs.toonboom.com/help/harmony-20/scripting/dbscript/index.html)
+* [Release Notes](https://desk.toonboom.com/hc/en-us/categories/360002501214-Release-Notes)
+
+ - - - -
+
 ## Further reading
-* [Harmony v20 API documentation](https://docs.toonboom.com/help/harmony-20/scripting/script/index.html)
+
 * [Eloquent Javascript](https://eloquentjavascript.net/)
 * [SoloLearn Javascript](https://www.sololearn.com/learning/1024)
 * [Khan Academy Javascript](https://www.khanacademy.org/computing/computer-programming/programming)
