@@ -16,5 +16,9 @@ function init()
   MessageLog.trace("Run your initialization script here!");
 }
 
+function SayHi(){
+  MessageBox.information("Hi!")
+}
+
 exports.configure = configure;
 exports.init = init;
