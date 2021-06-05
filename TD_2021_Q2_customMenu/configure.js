@@ -4,11 +4,10 @@ function configure(packageFolder, packageName)
     return;
 
   //Create Menu items
-  ScriptManager.addMenuItem( { targetMenuId : "PLAY_MENU_ID",
-                               id           : "MiniPlaybackShowDialogMenuID",
-                               text         : "Mini Playback...",
-                               action       : "MiniPlaybackDialog in ./configure.js",
-                               shortcut     : "MiniPlayDialogShortcut" } );
+  ScriptManager.addMenuItem( { targetMenuId : "TD_2021_Q2",
+                               id           : "TD_2021_Q2_1",
+                               text         : "Say Hi",
+                               action       : "SayHi in ./configure.js"} );
 }
 
 //Optional init function (not mandatory)
