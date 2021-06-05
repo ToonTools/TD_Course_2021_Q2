@@ -119,7 +119,18 @@ function findUnconnectedNodes(){
         if ( dialogResult == true ){
             for( i in unconnectedNodes_collection ){
                 nodeToBeDeleted = unconnectedNodes_collection[i]
-                node.deleteNode(nodeToBeDeleted, false, false)
+                MessageLog.trace("type " + typeof(nodeToBeDeleted))
+                MessageLog.trace("nodeToBeDeleted = " + nodeToBeDeleted)
+
+                MessageLog.trace("testing to see if i can get the node name = " + node.getName(nodeToBeDeleted))
+
+
+                // TODO - what I think is a node is infact the path of the node ( and so harmony does not recognise it as a node )
+
+
+
+                node.deleteNode(nodeToBeDeleted,false,false);
+                //node.deleteNode(nodeToBeDeleted, false, false)
                 MessageLog.trace("Deleted: " + nodeToBeDeleted)
             }
         }
