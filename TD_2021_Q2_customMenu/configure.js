@@ -14,7 +14,12 @@ function configure(packageFolder, packageName)
                                id           : "TD_2021_Q2_2",
                                text         : "Find Unconnected Nodes",
                                action       : "findUnconnectedNodes in TD_8-2_findUnconnectedNodes.js"} );
-                  
+                          
+  // access script written in this package folder
+  ScriptManager.addMenuItem( { targetMenuId : "TD_2021_Q2",
+                              id           : "TD_2021_Q2_3",
+                              text         : "Hello World from this package",
+                              action       : "helloWorld in helloWorldInThisPackage.js"} );             
 }
 
 //Optional init function (not mandatory)
