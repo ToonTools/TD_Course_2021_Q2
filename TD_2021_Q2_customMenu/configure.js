@@ -13,7 +13,7 @@ function configure(packageFolder, packageName)
   ScriptManager.addMenuItem( { targetMenuId : "TD_2021_Q2",
                                id           : "TD_2021_Q2_2",
                                text         : "Find Unconnected Nodes",
-                               action       : "findUnconnectedNodes in ./TD_8-2_findUnconnectedNodes.js"} );
+                               action       : "findUnconnectedNodes in TD_8-2_findUnconnectedNodes.js"} );
                   
 }
 
