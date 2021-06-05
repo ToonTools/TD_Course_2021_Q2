@@ -1,6 +1,6 @@
 function configure(packageFolder, packageName)
 {
-    if(about.isStageEssentials() || about.isStageAfvanced() || about.isPaintMode())
+    if(about.isStageEssentials() || about.isStageAdvanced() || about.isPaintMode())
     return
 
     //create view
