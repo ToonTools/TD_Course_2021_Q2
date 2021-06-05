@@ -74,3 +74,8 @@ Make a backup before you edit it as it is difficult to fix without reinstalling 
   <shortcut checkable="false" id="getAttributes" longDesc="list the attributes and their value for the selected node" order="256" slot="onActionExecuteScript(QString)" responder="scriptResponder" itemParameter="getAttributes in TD_7-3_getAttributes.js" text="get attributes" value="`" >
 </category>
 ```
+---
+## Day 12
+
+[[Scripting Extended Creating a Tool](https://docs.toonboom.com/help/harmony-20/scripting/extended/tutorial-tool-creation.html)]
+[[QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)]
