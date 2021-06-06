@@ -74,6 +74,42 @@ Make a backup before you edit it as it is difficult to fix without reinstalling 
   <shortcut checkable="false" id="getAttributes" longDesc="list the attributes and their value for the selected node" order="256" slot="onActionExecuteScript(QString)" responder="scriptResponder" itemParameter="getAttributes in TD_7-3_getAttributes.js" text="get attributes" value="`" >
 </category>
 ```
+
+## Day 10
+### Expressions
+For Freeze transformations, set them to 0 or 1.
+
+##### Multiply Value
+```
+input       = value("Square-Y")
+multiplier  = 3
+output      = input * multiplier
+```
+
+##### Use as a handle
+```
+max = 5
+min = 0
+
+handle_Y = value("handle-P_Pos_y")
+
+if( handle_Y <= min){
+  handle_Y = min
+}
+
+if( handle_Y >= max){
+  handle_Y = max
+}
+```
+
+##### linear translation of rotation
+```
+angle = value("Circle-P_Angle_z")
+radius = 3
+
+value = radius * sin(angle)
+```
+
 ---
 ## Day 12
 
