@@ -2,6 +2,8 @@
 Toon Boom Technical Director Course May-June 2021. <br><br>
 9am-12pm PST (Pacific Standard Time) Saturday & Sunday
 
+The abbreviation *TD21Q2* will be commonly used on file names within this repo so that its content is easily identifiable when navigated to.
+
  - - - -
  
 ## Session Summary
