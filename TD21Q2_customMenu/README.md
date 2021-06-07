@@ -10,7 +10,7 @@ The packages location typically needs admin priveleges, so make a copy of it som
 <menu id="TD_2021_Q2" text="TD_2021_Q2"> </menu>
 ```
 ##### make sure to not remove existing `<menu>`, the code should look like this
-![menu.xml screenshot](https://github.com/ToonTools/TD_Course_2021_Q2/images/customMenuLineNumbers.JPG "menu.xml screenshot")
+![menu.xml screenshot](/images/customMenuLineNumbers.JPG "menu.xml screenshot")
 
 
 ## Adding items to that menu
