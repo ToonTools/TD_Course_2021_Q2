@@ -5,10 +5,18 @@ C:\Program Files (x86)\Toon Boom Animation\Toon Boom Harmony 20 Premium\resource
 ```
 The packages location typically needs admin priveleges, so make a copy of it somewhere where you can save any edits before updating the master menus.xml. This file is easy to break so make sure to back up the original ( I save a copy as menus.xml_BAK )
 
+##### add this line at ~line 661
+``` html
+<menu id="TD_2021_Q2" text="TD_2021_Q2"> </menu>
+```
+##### make sure to not remove existing `<menu>`, the code should look like this
+![menu.xml screenshot](https://github.com/ToonTools/TD_Course_2021_Q2/images/customMenuLineNumbers.JPG "menu.xml screenshot")
+
+
 ## Adding items to that menu
 Now that the menu exists, you can create a package that will add items to this menu when Harmony is initialised.
 
-Put the content of this folder in the packages folder:
+##### Put the content of this folder in the packages folder
 ```
 C:\Program Files (x86)\Toon Boom Animation\Toon Boom Harmony 20 Premium\Plugins\ScriptingInterfaces\resources\packages
 ```
