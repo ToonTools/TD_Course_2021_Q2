@@ -10,13 +10,15 @@ function initView()
     
     var ui = ScriptManager.loadViewUI(scriptedView, "./TD21Q2_customWindow.ui");
    
-    var customFunction = function(){
-
-      MessageBox.information("This is the action for button1 !");
-
+    var customFunction_1 = function(){
+      MessageBox.information("This is the action for tool button 1");
     }
-
-    ui.button1.clicked.connect(this, customFunction);
+    var customFunction_2 = function(){
+      MessageBox.information("This is the action for tool button 2");
+    }
+    
+    ui.toolButton_1.clicked.connect(this, customFunction_1);
+    ui.toolButton_2.clicked.connect(this, customFunction_2);
 
     ui.show();
   }
