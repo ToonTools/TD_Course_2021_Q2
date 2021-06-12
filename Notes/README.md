@@ -110,6 +110,14 @@ radius = 3
 value = radius * sin(angle)
 ```
 
+
+## Day 11
+``` javascript
+Action.getResponderList();
+Action.getActionList([i]);  
+```
+
+
 ---
 ## Day 12
 
