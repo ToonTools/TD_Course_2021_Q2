@@ -112,14 +112,18 @@ value = radius * sin(angle)
 
 
 ## Day 11
+
+##### [Responder List](https://docs.toonboom.com/help/harmony-20/scripting/script/classAction.html#a4c23808879fd406368c2ecfe46e0799c)
 ``` javascript
 var rList = Action.getResponderList();
+```
+
+##### [Action List](https://docs.toonboom.com/help/harmony-20/scripting/script/classAction.html#ad9b65553c0959c0b7295a448f7bd1e3e)
+
+```javascript
 var aList = Action.getActionList("Node View");
 ```
 
-[Responder List](https://docs.toonboom.com/help/harmony-20/scripting/script/classAction.html#a4c23808879fd406368c2ecfe46e0799c)
-
-[Action List](https://docs.toonboom.com/help/harmony-20/scripting/script/classAction.html#ad9b65553c0959c0b7295a448f7bd1e3e)
 
 
 ---
