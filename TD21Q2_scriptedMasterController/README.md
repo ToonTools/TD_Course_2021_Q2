@@ -71,6 +71,7 @@ function hideDeformers(){
     Action.perform("onActionShowSelectedDeformers()", "miniPegModuleResponder");
 }
 
+
 function enableAllDrawings(){
     var type = ["READ"]
     var nodesToEnable = node.getNodes(type)
@@ -81,7 +82,6 @@ function enableAllDrawings(){
         node.setEnable( nodesToEnable[i], true )
     }
 }
-
 function disableAllDrawings(){
     var type = ["READ"]
     var nodesToDisable = node.getNodes(type)
@@ -92,19 +92,25 @@ function disableAllDrawings(){
     }
 }
 
-function toggleValue(valAttr){
+
+
+ function toggleValue(valAttr){
 
     try{
         MessageLog.trace("Button is now : " + valAttr)
 
-        // do something depending on boolean value
-        if(valAttr){//if true
-            //showDeformers()
-            enableAllDrawings()
+        var shiftCheck = KeyModifiers.IsShiftPressed()
+        // if shift is clicked: show/hide deformers, otherwise show/hide read nodes
 
-        }else{// its false
-            //hideDeformers()
-            disableAllDrawings()
+        if(shiftCheck){ 
+            // show/hide deformers
+            if(valAttr){  showDeformers()
+            }else{    hideDeformers() }
+
+        }else{
+            // show/hide read nodes
+            if(valAttr){   enableAllDrawings()
+            }else{    disableAllDrawings()}
         }
 
     }
