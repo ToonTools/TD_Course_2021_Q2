@@ -1,4 +1,5 @@
 // following https://docs.toonboom.com/help/harmony-20/premium/master-controller/function-wizard-customize-function.html
+//!debug
 function onPoint2dValueChanged(params, point2dVal)
 {
   MessageLog.trace("START");
@@ -14,13 +15,9 @@ function onPoint2dValueChanged(params, point2dVal)
     var deltaY = point2dVal.y - pos_y;
     var angle = Math.atan2(deltaY, deltaX) * 180 / Math.PI;
 
-    MessageLog.trace("Node Index:" + i);
-    MessageLog.trace("deltaX:" + deltaX);
-    MessageLog.trace("deltaY:" + deltaY);
-    MessageLog.trace("angle:" + angle);
+   node.setTextAttr(targetNode, "ROTATION.ANGLEZ", frame.current(), angle); 
 
   }
-
 
   MessageLog.trace("END");
 }
