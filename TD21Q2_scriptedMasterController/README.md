@@ -71,7 +71,6 @@ function hideDeformers(){
     Action.perform("onActionShowSelectedDeformers()", "miniPegModuleResponder");
 }
 
-
 function enableAllDrawings(){
     var type = ["READ"]
     var nodesToEnable = node.getNodes(type)
@@ -79,24 +78,21 @@ function enableAllDrawings(){
         // how do we enable nodes
         MessageLog.trace("52 will enable : " + nodesToEnable[i])
 
-        MessageLog.trace(getFullAttributeList(nodesToEnable[i]))
-
-        //node.setTextAttr(nodesToEnable[i], "disabled", frame.current(), "false")
+        node.setEnable( nodesToEnable[i], true )
     }
 }
+
 function disableAllDrawings(){
     var type = ["READ"]
     var nodesToDisable = node.getNodes(type)
     for ( var i = 0 ; i < nodesToDisable.length ; i++){
         // how do we enable nodes
         MessageLog.trace("64 will disable : " + nodesToDisable[i])
-        node.setTextAttr(nodesToDisable[i], "disabled", frame.current(), "true")
+        node.setEnable( nodesToDisable[i], false )
     }
 }
 
-
-
- function toggleValue(valAttr){
+function toggleValue(valAttr){
 
     try{
         MessageLog.trace("Button is now : " + valAttr)

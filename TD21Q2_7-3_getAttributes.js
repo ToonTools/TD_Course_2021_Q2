@@ -1,4 +1,5 @@
 function getAttributes(){
+	MessageLog.trace("started")
 	var selNode 			= selection.selectedNode(0)
 	var attrNames 			= node.getAllAttrNames(selNode)
 	var attrKeyword			= node.getAllAttrKeywords(selNode)
@@ -6,6 +7,7 @@ function getAttributes(){
 
 	MessageLog.trace(attrNames.length + " attributes found for : " + selNode )
 	
+
 	for( n in attrNames ){
 
 		var attrVal = node.getTextAttr(selNode,frame,attrKeyword[n])
@@ -32,8 +34,5 @@ function getAttributes(){
 				MessageLog.trace('\t  [' + subAttrVal_z + ']\t ' + attrKeyword_z)
 			}
 		}
-
-
 	}
-
 }
