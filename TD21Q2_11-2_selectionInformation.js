@@ -18,19 +18,15 @@ function getSelectionInformation(){
         var nodeName = mySelection[i]     
         var nodeType = node.type(nodeName)   
 
-        var compType = ""
-
-        /*
         // also give bitmap/pass through information if the selection is a composite
         if(node.type(nodeName) == "COMPOSITE"){
-			var specifficFrame = 1
-			compType = node.getAttr(nodeName, specifficFrame, "compositeMode")
+            compType = node.getTextAttr(nodeName, 1, "COMPOSITE_MODE")
+            nodeType += "[" + compType + "]"	
 		}
-        */
 
-        var myMessage = "\t"+i+"\t"+ nodeName + "\t" + nodeType + "\t" + compType
+        var myMessage = "--"+i+"--"+ nodeName + "---" + nodeType
         MessageLog.trace(myMessage)
     }
-
+	return
 }
 
