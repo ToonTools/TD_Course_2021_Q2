@@ -54,28 +54,61 @@ Controller.onHideControl = function(){
     node.setTextAttr(Controller.node, "checkbox_value",  frame.current(), false);
  }
 
+
+function showDeformers(){
+    var type = ["CurveModule","FreeFormDeformation","BendyBoneModule"]
+    var nodesToShow = node.getNodes(type)
+    for ( var i = 0 ; i < nodesToShow.length ; i++){
+        selection.addNodeToSelection(nodesToShow[i])
+    }
+    Action.perform("onActionShowSelectedDeformers()", "miniPegModuleResponder");
+    selection.clearSelection()
+}
+
+function hideDeformers(){
+    selection.clearSelection()
+    selection.addNodeToSelection(Controller.node)
+    Action.perform("onActionShowSelectedDeformers()", "miniPegModuleResponder");
+}
+
+
+function enableAllDrawings(){
+    var type = ["READ"]
+    var nodesToEnable = node.getNodes(type)
+    for ( var i = 0 ; i < nodesToEnable.length ; i++){
+        // how do we enable nodes
+        MessageLog.trace("52 will enable : " + nodesToEnable[i])
+
+        MessageLog.trace(getFullAttributeList(nodesToEnable[i]))
+
+        //node.setTextAttr(nodesToEnable[i], "disabled", frame.current(), "false")
+    }
+}
+function disableAllDrawings(){
+    var type = ["READ"]
+    var nodesToDisable = node.getNodes(type)
+    for ( var i = 0 ; i < nodesToDisable.length ; i++){
+        // how do we enable nodes
+        MessageLog.trace("64 will disable : " + nodesToDisable[i])
+        node.setTextAttr(nodesToDisable[i], "disabled", frame.current(), "true")
+    }
+}
+
+
+
  function toggleValue(valAttr){
 
     try{
         MessageLog.trace("Button is now : " + valAttr)
 
-        var type = ["CurveModule","FreeFormDeformation","BendyBoneModule"]
-        var nodesToShow = node.getNodes(type)
-
         // do something depending on boolean value
         if(valAttr){//if true
-
-            for ( var i = 0 ; i < nodesToShow.length ; i++){
-                selection.addNodeToSelection(nodesToShow[i])
-            }
-    
-            Action.perform("onActionShowSelectedDeformers()", "miniPegModuleResponder");
-            selection.clearSelection()
+            //showDeformers()
+            enableAllDrawings()
 
         }else{// its false
-            selection.clearSelection()
-            selection.addNodeToSelection(Controller.node)
-            Action.perform("onActionShowSelectedDeformers()", "miniPegModuleResponder");
+            //hideDeformers()
+            disableAllDrawings()
         }
 
     }
@@ -83,5 +116,4 @@ Controller.onHideControl = function(){
         MessageLog.trace("Error : " + error )
     }
  }
-
 ```
