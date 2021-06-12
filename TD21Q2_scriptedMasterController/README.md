@@ -55,7 +55,33 @@ Controller.onHideControl = function(){
  }
 
  function toggleValue(valAttr){
-    MessageLog.trace("button has been pressed")
+
+    try{
+        MessageLog.trace("Button is now : " + valAttr)
+
+        var type = ["CurveModule","FreeFormDeformation","BendyBoneModule"]
+        var nodesToShow = node.getNodes(type)
+
+        // do something depending on boolean value
+        if(valAttr){//if true
+
+            for ( var i = 0 ; i < nodesToShow.length ; i++){
+                selection.addNodeToSelection(nodesToShow[i])
+            }
+    
+            Action.perform("onActionShowSelectedDeformers()", "miniPegModuleResponder");
+            selection.clearSelection()
+
+        }else{// its false
+            selection.clearSelection()
+            selection.addNodeToSelection(Controller.node)
+            Action.perform("onActionShowSelectedDeformers()", "miniPegModuleResponder");
+        }
+
+    }
+    catch(error){
+        MessageLog.trace("Error : " + error )
+    }
  }
- 
+
 ```
