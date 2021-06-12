@@ -54,5 +54,8 @@ Controller.onHideControl = function(){
     node.setTextAttr(Controller.node, "checkbox_value",  frame.current(), false);
  }
 
-
+ function toggleValue(valAttr){
+    MessageLog.trace("button has been pressed")
+ }
+ 
 ```
