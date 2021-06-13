@@ -29,4 +29,3 @@ function getSelectionInformation(){
     }
 	return
 }
-
