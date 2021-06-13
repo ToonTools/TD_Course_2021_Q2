@@ -43,7 +43,7 @@ function swapDrawing(){
             // // if the drawing name is REJECT then see if we can REPLACE it
             if( drawingToBeReplaced(sel_drawing) ){
                 // // // if we can replace it then lets do so
-                MessagLog.trace("I want to replace this drawing")
+                MessageLog.trace("I want to replace this drawing")
             }
 
             MessageLog.trace("\tf-" + f + " : " + sel_drawing)
