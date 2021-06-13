@@ -13,7 +13,7 @@ function drawingToBeReplaced( drawingName ){
     // check if this drawing name is a REJECT name
     var removePrefix = "LOW"
 
-    if(nameStartsWith(caseSensetive,drawingName, false )){
+    if(nameStartsWith(removePrefix ,drawingName, false )){
         return true
     }
     return false
