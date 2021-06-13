@@ -8,7 +8,6 @@ function nameStartsWith(needle, haystack, caseSensetive){
     }
     return false
 }
-
 function drawingToBeReplaced( drawingName ){
     // check if this drawing name is a REJECT name
     var removePrefix = "LOW"
@@ -18,17 +17,12 @@ function drawingToBeReplaced( drawingName ){
     }
     return false
 }
-
-
 function swapDrawing(){
     scene.beginUndoRedoAccum("swapDrawing()")
     MessageLog.trace("\n\n --- swapDrawing() called --- ")
-
     var shotStart   = scene.getStartFrame()
     var shotEnd     = scene.getStopFrame()
-    
-    // select every drawing node in the scene
-    var readNodes = node.getNodes(["READ"])
+    var readNodes   = node.getNodes(["READ"])
 
     for ( var i = 0 ; i < readNodes.length ; i++ ){
         var sel_readNode    = readNodes[i]
@@ -36,15 +30,11 @@ function swapDrawing(){
 
         MessageLog.trace("current read node = " + sel_readNode)
 
-        // for each node figure out what the name of current drawing is
         for( var f = shotStart ; f < shotEnd ; f++){
             var sel_drawing = column.getEntry(sel_column, 1, f)
-
             var actionMessage = ""
-            // // if the drawing name is REJECT then see if we can REPLACE it
-            if( drawingToBeReplaced(sel_drawing) ){
-                // // // if we can replace it then lets do so
 
+            if( drawingToBeReplaced(sel_drawing) ){
                 var replacementDrawingName = "HIGH"
                 column.setEntry(sel_column, 1,f, replacementDrawingName)
 
@@ -53,12 +43,9 @@ function swapDrawing(){
                 actionMessage += "---"
             }
 
-
             MessageLog.trace("\tf-" + f + " : " + sel_drawing + " : " + actionMessage)
         }
     }
-
-
     MessageLog.trace("\n --- swapDrawing() completed successfully --- \n")
     scene.endUndoRedoAccum()
 }
