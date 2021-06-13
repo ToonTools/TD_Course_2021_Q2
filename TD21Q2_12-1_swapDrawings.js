@@ -45,7 +45,7 @@ function swapDrawing(){
 
             for( var f = shotStart ; f < shotEnd ; f++){
                 var sel_drawing = column.getEntry(sel_column, 1, f)
-                var actionMessage = sel_readNode + sel_drawing
+                var actionMessage = sel_drawing
 
                 if( drawingToBeReplaced(sel_drawing) ){
                     //var replacementDrawingName = "HIGH"
@@ -61,7 +61,7 @@ function swapDrawing(){
                 }else{
                     actionMessage += " - "
                 }
-                var sel_frameSwapInfo = "[f" +f + "]\t" + actionMessage
+                var sel_frameSwapInfo = sel_readNode + " [f" +f + "]\t" + actionMessage
                 MessageLog.trace(sel_frameSwapInfo)
                 System.println(sel_frameSwapInfo)
             }
@@ -83,3 +83,6 @@ function swapDrawing(){
 }
 
 swapDrawing()
+
+
+// HarmonyPremium -compile C:\Github\ToonTools\TD_Course_2021_Q2\TD21Q2_12-1_swapDrawings.js "C:\Users\chris\Documents\ToonBoom_Projects\TD Course 2021 Q2\Demo_Files\D12\swapDrawings\swapDrawings.xstage"
