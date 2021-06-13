@@ -17,7 +17,7 @@ function swapDrawing(){
         for( var f = shotStart ; f < shotEnd ; f++){
             var sel_drawing = column.getEntry(sel_column, 1, f)
 
-            MessagLog.trace("\tf-" + f + " : " + sel_drawing)
+            MessageLog.trace("\tf-" + f + " : " + sel_drawing)
         }
 
         // for each node figure out what the name of current drawing is
