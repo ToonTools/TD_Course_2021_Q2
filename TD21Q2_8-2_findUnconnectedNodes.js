@@ -75,20 +75,20 @@ function findUnconnectedNodes(){
         /*
         Input: node array
         Output: node array of length <= input node array
+        For each node: check if it is connected: if not addit to an array which is returned
         */
 
 		var unconnectedNodes_array 	= []
-
-        // if this node is unconnected then add it to the array containing all unconnected nodes
 		for ( k in node_array )		{
-			if ( !validate_nodeIsConnected(node_array[k]) ){	
-				unconnectedNodes_array.push(node_array[k])
+            var selNode = node_array[k]
+            var selNode_isConnected = validate_nodeIsConnected(selNode)
+			if ( !selNode_isConnected ){	
+				unconnectedNodes_array.push(selNode)
 			}
         }
 		return unconnectedNodes_array
 	}
     function dialog_unconnectedNodes_deleteChoice(unconnectedNodes_collection){
-        
         /*
         Input: node array 
         Action: choice to delete node collection from scene
@@ -100,10 +100,9 @@ function findUnconnectedNodes(){
 
         // show the nodes that have been found that are unconnected
 		var textMessage 	= ""
-		for( node in unconnectedNodes_collection ){
-			textMessage += unconnectedNodes_collection[node] + "\n"
+        for( i_node in unconnectedNodes_collection ){
+			textMessage += unconnectedNodes_collection[i_node] + "\n"
 		}
-	
 		var displayText 	= new TextEdit()
 		displayText.text 	= textMessage
 
@@ -118,37 +117,18 @@ function findUnconnectedNodes(){
         // if the user wants to delete the nodes...then delete them
         if ( dialogResult == true ){
             for( i in unconnectedNodes_collection ){
-                nodeToBeDeleted = unconnectedNodes_collection[i]
-                MessageLog.trace("type " + typeof(nodeToBeDeleted))
-                MessageLog.trace("nodeToBeDeleted = " + nodeToBeDeleted)
-
-                MessageLog.trace("testing to see if i can get the node name = " + node.getName(nodeToBeDeleted))
-
-
-                // TODO - what I think is a node is infact the path of the node ( and so harmony does not recognise it as a node )
-
-
-
-                node.deleteNode(nodeToBeDeleted,false,false);
-                //node.deleteNode(nodeToBeDeleted, false, false)
-                MessageLog.trace("Deleted: " + nodeToBeDeleted)
+                var selNode_toBeDeleted = unconnectedNodes_collection[i]
+                node.deleteNode(selNode_toBeDeleted,false,false);
+                MessageLog.trace("Deleted: " + selNode_toBeDeleted)
             }
-        }
-        else{
-            MessageLog.trace("user did not want to delete any nodes")
-        }
+        }else{ MessageLog.trace("user did not want to delete any nodes") }
     }
     try{
-        // validate user selection // escape if nothing is selected
+
         if( ! validate_userSelection(selection.selectedNodes()))  return
-        
-        // go inside any groups in the selection and add their content to the selection
         var mySelection_deep = add_groupContents_toNodeCollection(selection.selectedNodes())
-        
-        // find all unconnected nodes withing the deep selection
         var unconnectedNodes = get_unconnectedNodes_fromCollection(mySelection_deep)
-        
-        // ask the user if they want to delete the unconnected nodes
+
         if ( unconnectedNodes.length >= 1 ){
             dialog_unconnectedNodes_deleteChoice(unconnectedNodes)
         }else{
