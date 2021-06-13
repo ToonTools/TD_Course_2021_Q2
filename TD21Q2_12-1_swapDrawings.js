@@ -40,13 +40,18 @@ function swapDrawing(){
         for( var f = shotStart ; f < shotEnd ; f++){
             var sel_drawing = column.getEntry(sel_column, 1, f)
 
+            var actionMessage = ""
             // // if the drawing name is REJECT then see if we can REPLACE it
             if( drawingToBeReplaced(sel_drawing) ){
                 // // // if we can replace it then lets do so
                 MessageLog.trace("I want to replace this drawing")
+                actionMessage += "toBeReplaced"
+            }else{
+                actionMessage += "---"
             }
 
-            MessageLog.trace("\tf-" + f + " : " + sel_drawing)
+
+            MessageLog.trace("\tf-" + f + " : " + sel_drawing + " : " + actionMessage)
         }
     }
 
