@@ -17,6 +17,19 @@ function drawingToBeReplaced( drawingName ){
     }
     return false
 }
+
+function findReplacementDrawing( columnName ){
+    var replacePrefix = "HIGH"
+    var timings = column.getDrawingTimings( columnName )
+    for( var t = 0 ; t < timings.length ; t ++) {
+        var sel_timing = timings[t]
+        if( nameStartsWith(replacePrefix , sel_timing , false )){
+            return true
+        }
+    }
+    return false
+}
+
 function swapDrawing(){
     scene.beginUndoRedoAccum("swapDrawing()")
     MessageLog.trace("\n\n --- swapDrawing() called --- ")
@@ -35,15 +48,25 @@ function swapDrawing(){
             var actionMessage = ""
 
             if( drawingToBeReplaced(sel_drawing) ){
-                var replacementDrawingName = "HIGH"
-                column.setEntry(sel_column, 1,f, replacementDrawingName)
+                //var replacementDrawingName = "HIGH"
+                var replacementDrawingName = findReplacementDrawing(sel_column)
+                if( replacementDrawingName == true){
+                    MessageLog.trace("i am going to swap the drawings")
+
+
+                    //column.setEntry(sel_column, 1,f, replacementDrawingName)
+                }
+                else{
+                    MessageLog.trace("NO SWAPPING")
+                }
+                
 
                 actionMessage += " ==> " + replacementDrawingName
             }else{
-                actionMessage += "---"
+                actionMessage += " ---"
             }
 
-            MessageLog.trace("\tf-" + f + " : " + sel_drawing + " : " + actionMessage)
+            MessageLog.trace("\tf-" + f + " : " + sel_drawing + actionMessage)
         }
     }
     MessageLog.trace("\n --- swapDrawing() completed successfully --- \n")
