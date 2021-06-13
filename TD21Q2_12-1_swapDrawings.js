@@ -17,7 +17,6 @@ function drawingToBeReplaced( drawingName ){
     }
     return false
 }
-
 function findReplacementDrawing( columnName ){
     var replacePrefix = "HIGH"
     var timings = column.getDrawingTimings( columnName )
@@ -29,42 +28,58 @@ function findReplacementDrawing( columnName ){
     }
     return false
 }
-
 function swapDrawing(){
     scene.beginUndoRedoAccum("swapDrawing()")
-    MessageLog.trace("\n\n --- swapDrawing() called --- ")
-    var shotStart   = scene.getStartFrame()
-    var shotEnd     = scene.getStopFrame()
-    var readNodes   = node.getNodes(["READ"])
+    try{
+        var startMessage = "\n\n --- swapDrawing() called --- "
+        MessageLog.trace(startMessage)
+        System.println(startMessage)
 
-    for ( var i = 0 ; i < readNodes.length ; i++ ){
-        var sel_readNode    = readNodes[i]
-        var sel_column      = node.linkedColumn(sel_readNode, "DRAWING.ELEMENT")
+        var shotStart   = scene.getStartFrame()
+        var shotEnd     = scene.getStopFrame()
+        var readNodes   = node.getNodes(["READ"])
 
-        MessageLog.trace("current read node = " + sel_readNode)
+        for ( var i = 0 ; i < readNodes.length ; i++ ){
+            var sel_readNode    = readNodes[i]
+            var sel_column      = node.linkedColumn(sel_readNode, "DRAWING.ELEMENT")
 
-        for( var f = shotStart ; f < shotEnd ; f++){
-            var sel_drawing = column.getEntry(sel_column, 1, f)
-            var actionMessage = ""
+            for( var f = shotStart ; f < shotEnd ; f++){
+                var sel_drawing = column.getEntry(sel_column, 1, f)
+                var actionMessage = sel_readNode + sel_drawing
 
-            if( drawingToBeReplaced(sel_drawing) ){
-                //var replacementDrawingName = "HIGH"
-                var replacementDrawingName = findReplacementDrawing(sel_column)
-                if( replacementDrawingName != false){
-                    column.setEntry(sel_column, 1,f, replacementDrawingName)
-                    actionMessage += " ==> " + replacementDrawingName
+                if( drawingToBeReplaced(sel_drawing) ){
+                    //var replacementDrawingName = "HIGH"
+                    var replacementDrawingName = findReplacementDrawing(sel_column)
+                    if( replacementDrawingName != false){
+                        column.setEntry(sel_column, 1,f, replacementDrawingName)
+                        actionMessage += " ==> " + replacementDrawingName
+                    }
+                    else{
+                        actionMessage += " x unable "
+                    }
+                    
+                }else{
+                    actionMessage += " - "
                 }
-                else{
-                    actionMessage += " --- no valid drawing to swap to "
-                }
-                
-            }else{
-                actionMessage += " - no need to swap"
+                var sel_frameSwapInfo = "[f" +f + "]\t" + actionMessage
+                MessageLog.trace(sel_frameSwapInfo)
+                System.println(sel_frameSwapInfo)
             }
 
-            MessageLog.trace("\tf-" + f + " : " + sel_drawing + actionMessage)
+            // did this drawing succeed with the swaps or not
+            // node, what frames swapped, from and to 
+
         }
+        var endMessage = "\n --- swapDrawing() completed successfully --- \n"
+        MessageLog.trace(endMessage)
+        System.println(endMessage)
+    }catch(error){
+        var errorMessage = "\n --- swapDrawing() ERROR  --- \n" + error
+        MessageLog.trace(errorMessage)
+        System.println(errorMessage)
     }
-    MessageLog.trace("\n --- swapDrawing() completed successfully --- \n")
+
     scene.endUndoRedoAccum()
 }
+
+swapDrawing()
