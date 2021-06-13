@@ -24,7 +24,7 @@ function findReplacementDrawing( columnName ){
     for( var t = 0 ; t < timings.length ; t ++) {
         var sel_timing = timings[t]
         if( nameStartsWith(replacePrefix , sel_timing , false )){
-            return true
+            return sel_timing
         }
     }
     return false
@@ -50,20 +50,16 @@ function swapDrawing(){
             if( drawingToBeReplaced(sel_drawing) ){
                 //var replacementDrawingName = "HIGH"
                 var replacementDrawingName = findReplacementDrawing(sel_column)
-                if( replacementDrawingName == true){
-                    MessageLog.trace("i am going to swap the drawings")
-
-
-                    //column.setEntry(sel_column, 1,f, replacementDrawingName)
+                if( replacementDrawingName != false){
+                    column.setEntry(sel_column, 1,f, replacementDrawingName)
+                    actionMessage += " ==> " + replacementDrawingName
                 }
                 else{
-                    MessageLog.trace("NO SWAPPING")
+                    actionMessage += " --- no valid drawing to swap to "
                 }
                 
-
-                actionMessage += " ==> " + replacementDrawingName
             }else{
-                actionMessage += " ---"
+                actionMessage += " - no need to swap"
             }
 
             MessageLog.trace("\tf-" + f + " : " + sel_drawing + actionMessage)
