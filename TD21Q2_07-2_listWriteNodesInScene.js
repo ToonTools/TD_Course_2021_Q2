@@ -14,6 +14,7 @@ See Notes/Readme.md for more information on executing command prompt in harmony/
 function consoleWrite(message){
 	MessageLog.trace(message)
 	System.println(message)
+	MessageBox.information(message)
 }
 
 function listWriteNodesInScene(){
