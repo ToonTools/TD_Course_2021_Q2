@@ -26,8 +26,6 @@
       [[Action List](https://docs.toonboom.com/help/harmony-20/scripting/script/classAction.html#ad9b65553c0959c0b7295a448f7bd1e3e)]
 - [Day 12](#day-12)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 
 # Additional Notes
@@ -114,7 +112,7 @@ HarmonyPremium -compile "C:\Github\ToonTools\TD_Course_2021_Q2\TD_7-2_listWriteN
 Controlcenter -runStageScript <qsa_script_name> -env <environment name> -job <job name>
 ```
 ```javascript
-Controlcenter -runStageScript "C:\Github\ToonTools\TD_Course_2021_Q2\TD21Q2_07-2_listWriteNodesInScene.js" -env TCH_TheCatch -job TCH_101_Pilot
+Controlcenter -runStageScript "C:\Github\ToonTools\TD_Course_2021_Q2\TD_7-2_listWriteNodesInScene.js" -env TCH_TheCatch -job TCH_101_Pilot
 ```
 ---
 # Day 8

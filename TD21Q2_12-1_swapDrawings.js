@@ -84,5 +84,5 @@ function swapDrawing(){
 
 swapDrawing()
 
-
+// HarmonyPremium -compile <script full path> <.xstage file full path>
 // HarmonyPremium -compile C:\Github\ToonTools\TD_Course_2021_Q2\TD21Q2_12-1_swapDrawings.js "C:\Users\chris\Documents\ToonBoom_Projects\TD Course 2021 Q2\Demo_Files\D12\swapDrawings\swapDrawings.xstage"
