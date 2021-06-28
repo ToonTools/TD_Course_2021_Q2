@@ -177,7 +177,16 @@ var rList = Action.getResponderList();
 ```javascript
 var aList = Action.getActionList("Node View");
 ```
-
+```javascript
+function availableActionsInContext(selContext){
+  var aList = Action.getActionList(selContext);
+  for(var i=0; i < aList.length; ++i)
+  {
+    MessageLog.trace( selContext +" action " + i + " : " rList[i] );
+  }
+}
+availableActionsInContext("Camera")
+```
 
 
 ---
