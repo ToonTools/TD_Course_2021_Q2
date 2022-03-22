@@ -35,7 +35,7 @@ The abbreviation *TD21Q2* will be commonly used on file names within this repo s
 ## Toon Boom Documentation
 * [Harmony v20](https://docs.toonboom.com/help/harmony-20/premium/book/index.html)
 * [Harmony v20 Scripting](https://docs.toonboom.com/help/harmony-20/scripting/script/index.html)<details>
-  <summary>local path</summary>file:///C:/Program%20Files%20(x86)/Toon%20Boom%20Animation/Toon%20Boom%20Harmony%2020%20Premium/help/script/index.html<details>
+  <summary>local path</summary>`file:///C:/Program%20Files%20(x86)/Toon%20Boom%20Animation/Toon%20Boom%20Harmony%2020%20Premium/help/script/index.html`
 * [Harmony v20 Scripting Extended](https://docs.toonboom.com/help/harmony-20/scripting/extended/) [[create a tool](https://docs.toonboom.com/help/harmony-20/scripting/extended/tutorial-tool-creation.html)]
 * [Harmony v20 Control Center Scripting](https://docs.toonboom.com/help/harmony-20/scripting/dbscript/index.html)
 * [Release Notes](https://desk.toonboom.com/hc/en-us/categories/360002501214-Release-Notes)
